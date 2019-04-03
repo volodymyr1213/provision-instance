@@ -1,0 +1,14 @@
+- name: Creates ec2 instances
+  hosts: localhost 
+  vars_files:
+    - regions: {{ eu-west-1c }}.yml 
+  tasks: 
+    - name: Replace this line here 
+      ec2:
+        key_name: "{{ my_key }}" 
+        assign_public_ip: yes 
+        instance_type: "{{ t2.medium }}"  
+        region: "{{ eu-west-1c }}" 
+        image: "{{ i-03fb55e38338b39e4 }}"  
+        vpc_subnet_id: "{{ subnet-64e0463e }}"
+        count: "{{ 1 }}"
