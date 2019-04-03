@@ -4,7 +4,7 @@
   tasks:
     - name: Create file
       file:
-        path: /tmp/file{1..5}
+        path: /tmp/file1
         state: touch
         access_time: 20180502
       when: ansible_distribution == "Ubuntu" "Centos" "Dedian"
